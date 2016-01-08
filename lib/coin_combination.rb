@@ -1,5 +1,5 @@
 class Fixnum
-  require 'active_support/inflector'
+  #require 'active_support/inflector'
   def coin_slide
     coin_values = [25, 10, 5, 1]
     raw_change = self
@@ -19,7 +19,7 @@ class Fixnum
     coins = {0 => "quarter", 1 => "dime", 2 => "nickel", 3 => "penny" }
     total_coins.each_with_index do |coin, index|
       unless coin == 0
-        coin > 1 ? amount = coins.fetch(index).pluralize : amount = coins.fetch(index)
+        coin > 1 ? amount = coins.fetch(index) : amount = coins.fetch(index)
         test << "#{coin} #{amount} "
       end
     end
